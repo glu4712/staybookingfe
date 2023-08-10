@@ -9,7 +9,7 @@ export const login = (credentials, asHost) => {
     },
     body: JSON.stringify(credentials),
   }).then((response) => {
-    if (response.status != 200) {
+    if (response.status !== 200) {
       throw new Error("Invalid credentials");
     }
 
@@ -41,7 +41,7 @@ export const getReservations = () => {
       Authorization: `Bearer ${authToken}`,
     },
   }).then((response) => {
-    if (response.status == 403) {
+    if (response.status === 403) {
       throw new Error("Invalid credentials");
     }
     if (response.status !== 200) {
@@ -60,7 +60,7 @@ export const getStaysByHost = () => {
       Authorization: `Bearer ${authToken}`,
     },
   }).then((response) => {
-    if (response.status == 403) {
+    if (response.status === 403) {
       throw new Error("Invalid credentials");
     }
     if (response.status !== 200) {
@@ -90,10 +90,10 @@ export const searchStays = (query) => {
       Authorization: `Bearer ${authToken}`,
     },
   }).then((response) => {
-    if (response.status == 403) {
+    if (response.status === 403) {
       throw new Error("Invalid credentials");
     }
-    if (response.status != 200) {
+    if (response.status !== 200) {
       throw new Error("Error searching stays");
     }
     return response.json();
@@ -110,7 +110,7 @@ export const deleteStay = (stayId) => {
       Authorization: `Bearer ${authToken}`,
     },
   }).then((response) => {
-    if (response.status == 403) {
+    if (response.status === 403) {
       throw new Error("Invalid credentials");
     }
     if (response.status !== 200) {
@@ -131,7 +131,7 @@ export const bookStay = (data) => {
     },
     body: JSON.stringify(data),
   }).then((response) => {
-    if (response.status == 403) {
+    if (response.status === 403) {
       throw new Error("Invalid credentials");
     }
     if (response.status !== 200) {
@@ -150,7 +150,7 @@ export const cancelReservation = (reservationId) => {
       Authorization: `Bearer ${authToken}`,
     },
   }).then((response) => {
-    if (response.status == 403) {
+    if (response.status === 403) {
       throw new Error("Invalid credentials");
     }
     if (response.status !== 200) {
@@ -168,7 +168,7 @@ export const getReservationsByStay = (stayId) => {
       Authorization: `Bearer ${authToken}`,
     },
   }).then((response) => {
-    if (response.status == 403) {
+    if (response.status === 403) {
       throw new Error("Invalid credentials");
     }
     if (response.status !== 200) {
@@ -190,7 +190,7 @@ export const uploadStay = (data) => {
     },
     body: data,
   }).then((response) => {
-    if (response.status == 403) {
+    if (response.status === 403) {
       throw new Error("Invalid credentials");
     }
     if (response.status !== 200) {
