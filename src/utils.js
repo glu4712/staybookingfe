@@ -1,4 +1,4 @@
-const domain = "http://applied-arcanum-394202.wl.r.appspot.com";
+const domain = "http://localhost:8080";
 
 export const login = (credentials, asHost) => {
   const loginUrl = `${domain}/authenticate/${asHost ? "host" : "guest"}`;
